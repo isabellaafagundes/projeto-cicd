@@ -18,7 +18,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Rodar testes
-        run: pytest
+        run: |
+          pip install pytest
+          PYTHONPATH=./src pytest
 
       - name: Gerar relatório de testes
         run: echo "Testes executados com sucesso" > relatorio.txt
